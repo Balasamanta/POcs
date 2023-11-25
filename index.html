@@ -2,9 +2,25 @@
 <html>
 <body>
 
-<h1>The button Element</h1>
+<h2>HTML Forms</h2>
 
-<button type="button" href="https://api.whatsapp.com/send?phone=9326993986&text=Send%20a%20quote">Click Me!</button>
- 
+<form>
+<label for="phone">Phone:</label><br>
+<input type="text" id="phone" name="phone" value="9326993986"><br>
+  <label for="firstName">First name:</label><br>
+  <input type="text" id="fname" name="fname" value="Himanshu"><br>
+  
+</form> 
+<button type="button" onclick="myFunction()">Click Me!</button>
+<p>If you click the "Submit" button, the form-data will be sent to a page called "/action_page.php".</p>
+
+<script>
+function myFunction(){
+	var strToPut = "https://api.whatsapp.com/send?phone=" + document.getElementById('phone').value + "&text=" + "Send%20a%20quote";
+	//var firstName = document.getElementById('firstName').value;
+    //"https://api.whatsapp.com/send?phone=9326993986&text=Send%20a%20quote"
+	window.location.replace(strToPut);
+}
+</script>
 </body>
 </html>
